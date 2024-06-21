@@ -4,12 +4,12 @@ import React, { createContext, useReducer, useState } from 'react'
 const CartContext = createContext({
     items: [],
     addItem: (item) => {},
-    removeItem: (item) => {},
+    removeItem: (id) => {},
 })
 
 function cartReducer(state, action) {
     if (action.type === 'ADD_ITEM') {
-        const existingCartItemIndex = state.items.findIndex((item) => item.id === action.id);
+        const existingCartItemIndex = state.items.findIndex((item) => item.id === action.item.id);
 
         const updatedItems = [...state.items];
 
@@ -68,8 +68,8 @@ export const CartContextProvider = ({children}) => {
 
     const cartContext = {
         items: cart.items,
-        addItem: addItem,
-        removeItem: removeItem,
+        addItem,
+        removeItem,
     }
     
     // console.log(cartContext);
