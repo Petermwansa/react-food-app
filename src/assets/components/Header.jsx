@@ -1,5 +1,6 @@
 import React from 'react';
 import logoImg from '../logo.jpg'
+import Button from './UI/Button';
 
 const Header = () => {
   return (
@@ -9,10 +10,10 @@ const Header = () => {
         <h1>Rockie Eats</h1>
       </div>
       <nav>
-        <button>Cart (0)</button>
+        <Button textOnly>Cart (0)</Button>
       </nav>
     </header>
   )
 }
 
-export default Header
+export default Header;
