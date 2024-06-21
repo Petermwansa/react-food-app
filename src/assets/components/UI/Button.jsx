@@ -2,7 +2,7 @@ import React from 'react'
 
 const Button = ({ children, textOnly, className, ...props }) => {
 
-    let cssClasses = textOnly ? 'textOnly' : 'button';
+    let cssClasses = textOnly ? 'text-button' : 'button';
     cssClasses += ' ' + className;
 
 
