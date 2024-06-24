@@ -71,14 +71,19 @@ const Checkout = () => {
     }
 
     if (data && !error) {
-        return <Modal open={userProgressCtx.progress === 'checkout'} onClose={handleFinish}>
-            <h2>Success!</h2>
-            <p>Your order was submitted successfully</p>
-            <p>We will get back to you shortly.</p>
-            <p className='modal-actions'>
-                <Button onClick={handleClose}>Okay</Button>
-            </p>
-        </Modal>
+        return (
+            <Modal 
+                open={userProgressCtx.progress === 'checkout'} 
+                onClose={handleFinish}
+            >
+                <h2>Success!</h2>
+                <p>Your order was submitted successfully</p>
+                <p>We will get back to you shortly.</p>
+                <p className='modal-actions'>
+                    <Button onClick={handleClose}>Okay</Button>
+                </p>
+            </Modal>
+        ) 
     }
 
 

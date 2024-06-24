@@ -15,7 +15,7 @@ function cartReducer(state, action) {
         const updatedItems = [...state.items];
 
         if (existingCartItemIndex > -1) {
-            // if we did have that item, we add it 
+            // if we did have that item, we add to it 
             const existingItem = state.items[existingCartItemIndex];
             const updatedItem = {
                 ...existingItem,
@@ -23,7 +23,7 @@ function cartReducer(state, action) {
             }
             updatedItems[existingCartItemIndex] = updatedItem
         } else {
-            // if we did not have the item in the Array, we push/add it 
+            // if we did not have the item in the Array, we push/add it to the cart  
             updatedItems.push({...action.item, quantity: 1})
         }
 
@@ -39,6 +39,8 @@ function cartReducer(state, action) {
 
         const updatedItems = [...state.items];
 
+        // we check if the quantity of the items with that id is 1, we just remove it using the Splice method....
+        //else, we reduce the quantity by 1 on each click
         if (existingCartItem.quantity === 1) {
             updatedItems.splice(existingCartItemIndex, 1)
         } else {
@@ -49,6 +51,7 @@ function cartReducer(state, action) {
             updatedItems[existingCartItemIndex] = updatedItem;
         }
 
+        // we then finally return the updated state after the action and the new array of updated items 
         return { ...state, items: updatedItems}
 
     }
