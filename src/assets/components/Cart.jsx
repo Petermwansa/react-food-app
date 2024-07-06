@@ -10,7 +10,6 @@ const Cart = () => {
     const cartCtx = useContext(CartContext);
     const userProgressCtx = useContext(UserProgressContext);
 
-    // we are using the reduce() to calculate the total amount the cart 
     const cartTotal = cartCtx.items.reduce(
         (totalPrice, item) => totalPrice + item.quantity * item.price, 0);
 
@@ -23,16 +22,14 @@ const Cart = () => {
       userProgressCtx.showCheckout();
     }
 
+    
+
+
 
   return (
-    <Modal className='cart' 
-      open={userProgressCtx.progress === 'cart'} 
-      onClose={userProgressCtx.progress === 'cart' ? handleCloseCart : null}
-    >
+    <Modal className='cart' open={userProgressCtx.progress === 'cart'} onClose={userProgressCtx.progress === 'cart' ? handleCloseCart : null}>
       <h2>Your Cart</h2>
       <ul>
-        {/* here we map throught the items that are gotten using the cartCtx 
-        and then use the Cartitem comp to render the data to the screen   */}
         {cartCtx.items.map(item => (
             <Cartitem 
                 key={item.id}

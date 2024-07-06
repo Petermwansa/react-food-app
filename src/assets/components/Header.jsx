@@ -14,7 +14,7 @@ const Header = () => {
         return totalNumberOfItems + item.quantity;
     }, 0)
 
-    // this function will utilise the userProgressCtx provided and ahow the cart from the data that is there 
+    // this function will utilise the userProgressCtx providedand ahow the cart from the data that is there 
     function handleShowCart() {
       userProgressCtx.showCart();
     }
